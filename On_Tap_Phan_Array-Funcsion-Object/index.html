@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function students(number, name, age, sex, address, point, status) {
+            (this.number = number),
+                (this.name = name),
+                (this.age = age),
+                (this.sex = sex),
+                (this.address = address),
+                (this.point = point);
+            this.status = status;
+
+            this.TBdiem = function () {
+                var diemTB = 0;
+                for (var i = 0; i < this.point.length; i++) {
+                    diemTB += this.point[i];
+                }
+                return diemTB / 3;
+            };
+            this.displayStudents = function () {
+                document.write(
+                    "ten sinh vien: " +
+                    this.name +
+                    "<br>" +
+                    "ma sinh vien : " +
+                    this.number +
+                    "<br>" +
+                    "tuoi sv : " +
+                    this.age +
+                    "<br>"
+                );
+            };
+        }
+        let arrayPoint1 = [6, 8, 7];
+        let arrayPoint2 = [6, 5, 7];
+        let arrayPoint3 = [1, 4, 7];
+        let arrayPoint4 = [6, 8, 7];
+        let arrayPoint5 = [0, 4, 5];
+
+        let studentInfo1 = new students(
+            "122323",
+            "Long",
+            25,
+            "nam",
+            "ha dong",
+            arrayPoint1,
+            true
+        );
+
+        let studentInfo2 = new students(
+            "134343",
+            "bong",
+            24,
+            "nu",
+            "ha dong",
+            arrayPoint2,
+            true
+        );
+
+        let studentInfo3 = new students(
+            "167673",
+            "Long2",
+            22,
+            "linh",
+            "ha dong",
+            arrayPoint3,
+            true
+        );
+
+        let studentInfo4 = new students(
+            "7893",
+            "hung",
+            23,
+            "nam",
+            "ha dong",
+            arrayPoint4,
+            true
+        );
+
+        let studentInfo5 = new students(
+            "187893",
+            "thao",
+            27,
+            "nu",
+            "ha dong",
+            arrayPoint5,
+            true
+        );
+        studentInfo1.displayStudents();
+
+        document.write(
+            "diem chung binh sinh vien 1 la: " +
+            studentInfo1.TBdiem() +
+            "<br>" +
+            "<br>"
+        );
+        studentInfo2.displayStudents();
+        document.write(
+            "diem chung binh sinh vien 2 la: " +
+            studentInfo2.TBdiem() +
+            "<br>" +
+            "<br>"
+        );
+        studentInfo3.displayStudents();
+        document.write(
+            "diem chung binh sinh vien 3 la: " +
+            studentInfo3.TBdiem() +
+            "<br>" +
+            "<br>"
+        );
+        studentInfo4.displayStudents();
+        document.write(
+            "diem chung binh sinh vien 4 la: " +
+            studentInfo4.TBdiem() +
+            "<br>" +
+            "<br>"
+        );
+        studentInfo5.displayStudents();
+        document.write(
+            "diem chung binh sinh vien 5 la: " +
+            studentInfo5.TBdiem() +
+            "<br>" +
+            "<br>"
+        );
+
+        var arrrStudent = [];
+        arrrStudent.push(studentInfo1);
+        arrrStudent.push(studentInfo2);
+        arrrStudent.push(studentInfo3);
+        arrrStudent.push(studentInfo4);
+        arrrStudent.push(studentInfo5);
+
+        document.write("Nhung hoc sinh diem duoi trung binh:" + "<br>");
+        function studentDot() {
+            for (i = 0; i < arrrStudent.length; i++) {
+                // arrrStudent[i].point
+                for (var j = 0; j < arrrStudent[i].point.length; j++) {
+                    if (arrrStudent[i].point[j] < 5) {
+                        document.write(
+                            "Thang " +
+                            arrrStudent[i].name +
+                            " co diem duoi 5 la: " +
+                            arrrStudent[i].point[j] +
+                            "<br>" +
+                            "<br>"
+                        );
+                    }
+                }
+            }
+        }
+        studentDot();
+
+        document.write("Nhung hoc sinh diem TB duoi 5 la" + "<br>");
+        function studentTBDot() {
+            for (i = 0; i < arrrStudent.length; i++) {
+                if (arrrStudent[i].TBdiem() < 5) {
+                    arrrStudent[i].status = false;
+                    document.write(
+                        "Hoc sinh ten " +
+                        arrrStudent[i].name +
+                        " co trang thai " +
+                        arrrStudent[i].status +
+                        "<br>" +
+                        "<br>"
+                    );
+                }
+            }
+        }
+        studentTBDot();
+        function studentbiduoi() {
+            try {
+                for (i = 0; i < arrrStudent.length; i++) {
+                    if (arrrStudent[i].status == false) {
+                        let arr = arrrStudent.splice(i, 1);
+                    }
+                    document.write(
+                        "nhung hoc sinh con hoc la: " + arrrStudent[i].name + "<br>"
+                    );
+                }
+            } catch (error) {
+
+            }
+        }
+        studentbiduoi();
+        function studentstuoi() {
+            for (i = 0; i < arrrStudent.length; i++) {
+                for (j = i; j < arrrStudent.length; j++) {
+                    if (arrrStudent[i].age < arrrStudent[j].age) {
+                        var temp = arrrStudent[i];
+                        arrrStudent[i] = arrrStudent[j];
+                        arrrStudent[j] = temp;
+                    }
+                }
+            }
+            console.log(arrrStudent);
+        }
+        studentstuoi();
+    </script>
+</body>
+
+</html>
