@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Một số hàm trong CSS</title>
+    <link rel="stylesheet" href="./main.css">
+
+    <style>
+        /* Tao chu trong box */
+        .box::after {
+            content: "Xin chao cac ban";
+        }
+
+        .box::after {
+            content: attr(data-title);
+        }
+
+
+
+        /* <!--cac toi uu hon bang su dung lớp giả --> */
+        /* khi dung noi trong the a them dấu chuỗi " " */
+        a::after {
+            content: " ( " attr(href) ")";
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" data-title="Day la box mau do"></div><br>
+    <div class="box" title="Day la box mau do o duoi"></div>
+
+
+    <!-- <a href="https://fullstack.edu.vn">Hoc lap trinh (https://fullstack.edu.vn)</a><br> -->
+
+    <!--cac toi uu hon bang su dung lớp giả -->
+    <a href="https://fullstack.edu.vn">Hoc lap trinh</a><br> <!-- Để ý màu khi có .com-->
+    <a href="https://fullstack.edu.com.vn">Hoc lap trinh</a> <br>
+    <a href="https://fullstack.edu.vn">Hoc lap trinh</a> <br>
+
+    <h2>CSS functions</h2>
+    <ul>
+        <li>var()</li>
+        <li>linear-gradient()</li>
+        <li>rgba()</li>
+        <li>rbg()</li>
+        <li>calc()</li>
+        <li>attr()</li>
+    </ul>
+
+
+    </div>
+</body>
+
+</html>

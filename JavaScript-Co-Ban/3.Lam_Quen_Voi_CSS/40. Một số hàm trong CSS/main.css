@@ -1,0 +1,5 @@
+.box {
+  width: calc(80% - 200px);
+  height: 120px;
+  background: rgb(219, 57, 57);
+}

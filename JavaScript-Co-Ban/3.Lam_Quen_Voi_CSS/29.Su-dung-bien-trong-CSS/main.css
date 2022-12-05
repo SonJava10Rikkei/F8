@@ -3,7 +3,9 @@
   /* su dung moi noi global */
 }
 h1 {
-  color: var(--text-color);
+  /* local */
+  --my-color: rgb(7, 247, 7);
+  color: var(--my-color);
 }
 h2 {
   color: var(--text-color);
