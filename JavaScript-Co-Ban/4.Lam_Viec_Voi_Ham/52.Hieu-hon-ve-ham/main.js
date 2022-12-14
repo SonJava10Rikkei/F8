@@ -8,15 +8,15 @@ Một số điều cần biết về function
 
 // 1. Khi function đặt trùng tên?
 
-// function showMessage() {
-//   console.log("Message 1");
-// }
-// function showMessage() {
-//   console.log("Message 2");
-// }
-// function showMessage() {
-//   console.log("Message 3");
-// }
+function showMessage() {
+  console.log("Message 1");
+}
+function showMessage() {
+  console.log("Message 2");
+}
+function showMessage() {
+  console.log("Message 3");
+}
 
 // showMessage();
 // Cái function định nghĩa sau sẽ gi đè function trước
