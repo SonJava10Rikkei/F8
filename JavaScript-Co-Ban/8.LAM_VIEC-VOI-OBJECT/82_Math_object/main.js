@@ -54,4 +54,5 @@ Math object
 
 // console.log(random2);
 
-
+var a = 500000;
+console.log(a.toLocaleString());
