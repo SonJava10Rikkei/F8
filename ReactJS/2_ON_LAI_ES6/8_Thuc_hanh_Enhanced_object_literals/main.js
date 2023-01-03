@@ -17,9 +17,6 @@ function arrToObj(arr) {
 
 }
 
-
-
-
 // Expected results:
 
 const obj1 = arrToObj([
