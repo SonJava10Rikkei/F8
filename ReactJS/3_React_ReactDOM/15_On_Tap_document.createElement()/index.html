@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15_On_Tap_document.createElement()</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        const root = document.querySelector('#root');
+
+        const heading = document.createElement('h1');
+
+        heading.innerText = 'F8 - Học lập trình để đi làm';
+
+        root.appendChild(heading);
+    </script>
+    <!-- 
+    Tạo ra 1 thẻ có h1 có nội dung là 'F8 - Học lập trình để đi làm'
+    và gắn vào trong thẻ div có id là root
+ -->
+</body>
+
+</html>

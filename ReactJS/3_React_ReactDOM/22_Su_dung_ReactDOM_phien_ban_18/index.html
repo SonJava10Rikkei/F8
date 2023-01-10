@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22_Su_dung_ReactDOM_phien_ban_18</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+</head>
+
+<body>
+    <!-- 
+    1. Tại sao phải sử dụng React-DOM?
+    2. Tại sao lại tách React-DOM ra?
+    3. Render UI
+    -->
+
+    <!-- 
+    1. Tại sao phải sử dụng React-DOM?
+        Dùng React-DOM để chúng ta có thể render element ra trình duyệt
+        
+        React-DOM là gi? React-DOM là thư viện nó là cầu nối giữ React và DOM
+        React sau khi tạo React element ----+> có thể dùng element đó render vào DOM
+        (Ngoài ra có 
+        React - Native -> build ra ứng dụng iOS, Android          
+        )
+    2. Tại sao lại tách React-DOM ra?
+    
+
+
+-->
+    <!-- 
+// 7. Tạo:
+// <div class="post-item">
+    // <h2 title="Học React tại F8">Học ReactJS</h2>
+    // <p>Học ReactJS từ cơ bản tới nâng cao</p>
+    // </div>
+// -->
+
+    <div id="root"></div>
+    <script>
+        // // React
+        const postItem = React.createElement(
+            "div",
+            {
+                className: "post-item",
+            },
+            React.createElement(
+                "h2",
+                {
+                    title: "Học React tại F8",
+                },
+                'Học ReactJS'
+            ),
+            React.createElement("p", {}, 'Học ReactJS từ cơ bản tới nâng cao')
+        );
+
+        // Get root element
+        // const root = document.getElementById("root");
+
+        // // React-DOM -> render UI
+        // ReactDOM.render(postItem, root)
+
+
+
+        const h1React = React.createElement(
+            "h1",
+            {
+                title: "Hello",
+                className: "heading",
+            },
+            'Hello guys!'
+        );
+        // // // Get root element
+        // // const root = document.getElementById("root");
+
+        // // // Render UI
+        // // ReactDOM.render(h1React, root);
+
+
+        const ulReact = React.createElement(
+            "ul",
+            {},
+            React.createElement('li', {}, 'Javascript'),
+            React.createElement('li', {}, 'ReactJS'),
+        );
+        // console.log(ulReact);
+
+        // // Get root element
+        // const root = document.getElementById("root");
+
+        // // Render UI
+        // ReactDOM.render([postItem, h1React, ulReact,], root);
+
+
+        // RENDER bằng version 18
+        const container = document.getElementById("root");
+
+        const root = ReactDOM.createRoot(container);
+        root.render(postItem)
+
+        // test render 1 mảng
+        // const allContainer = document.getElementById("root");
+        // const root2 = ReactDOM.createRoot(allContainer);
+        // root2.render([postItem, h1React, ulReact])
+    </script>
+
+</body>
+
+</html>
