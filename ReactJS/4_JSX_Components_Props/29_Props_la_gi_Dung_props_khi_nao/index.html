@@ -41,17 +41,25 @@
 
         // PostItem.js
 
-        function PostItem(props) {
+        function PostItem({
+            image,
+            title,
+            description,
+            publishedAt,
+            callback = () => { },
+        }) {
+
+            callback(Math.random() * 10);
             return (
                 <div className='post-item'>
                     <label htmlFor='email'>Email</label>
                     <input id='email' />
-                    <img src={props.image}
-                        alt={props.title}
+                    <img src={image}
+                        alt={title}
                     />
-                    <h2 class="post-title">{props.title}</h2>
-                    <p class="post-desc">{props.description}</p>
-                    <p class="post-published">{props.publishedAt}</p>
+                    <h2 class="post-title">{title}</h2>
+                    <p class="post-desc">{description}</p>
+                    <p class="post-published">{publishedAt}</p>
                 </div>
             )
         }
@@ -61,12 +69,26 @@
             return (
                 <div id='wrapper'>
                     <PostItem
-                        title="C#(.NET) - Tương tác với file Excel"
+                        title="1 C#(.NET) - Tương tác với file Excel"
                         image="https://files.fullstack.edu.vn/f8-prod/learning-paths/2/63b4642136f3e.png"
-                        description='Bạn có kiến thức ngôn ngữ C#'
-                        publishedAt='Một ngày trước 5 phút đọc'
+                        description='1 Bạn có kiến thức ngôn ngữ C#'
+                        publishedAt='1 Một ngày trước 5 phút đọc'
+                        callback={(random) => {
+                            console.log('random: ', random)
+                        }}
                     />
-
+                    <PostItem
+                        title="2 C#(.NET) - Tương tác với file Excel"
+                        image="https://files.fullstack.edu.vn/f8-prod/learning-paths/2/63b4642136f3e.png"
+                        description='2 Bạn có kiến thức ngôn ngữ C#'
+                        publishedAt='2 Một ngày trước 5 phút đọc'
+                    />
+                    <PostItem
+                        title="3 C#(.NET) - Tương tác với file Excel"
+                        image="https://files.fullstack.edu.vn/f8-prod/learning-paths/2/63b4642136f3e.png"
+                        description='3 Bạn có kiến thức ngôn ngữ C#'
+                        publishedAt='3 Một ngày trước 5 phút đọc'
+                    />
                 </div>
             )
         }
