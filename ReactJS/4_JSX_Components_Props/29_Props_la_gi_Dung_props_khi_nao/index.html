@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>29_Props_la_gi_Dung_props_khi_nao</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+</head>
+
+<body>
+    <!-- 
+        Props là một objects chứa các thuộc tính để có thể mô tả cho ReactElement mà cta tạo ra
+         -->
+
+    <!-- 
+        Props
+
+        - React elements
+            + Sử dụng props giống như với attribute của thẻ HTML
+            + 2 props class, for => className, htmFor
+            + Phải tuân theo quy ước có sẵn
+        - React components
+            + Sử dụng props giống nhứ đối số cho Function
+            + Tự do đặt tên props
+                Đặt theo camelCase
+                Có thể bao gồm dấu gạch ngang
+        * CHÚ Ý: 
+            + Prop 'key' là prop đặc biệt
+            + Props cơ bản là đối số của Component
+                => Props có thể là bất cứ kiểu dữ liệu gì
+            + Sử dụng destructuring
+     -->
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        // PostItem.js
+
+        function PostItem(props) {
+            return (
+                <div className='post-item'>
+                    <label htmlFor='email'>Email</label>
+                    <input id='email' />
+                    <img src={props.image}
+                        alt={props.title}
+                    />
+                    <h2 class="post-title">{props.title}</h2>
+                    <p class="post-desc">{props.description}</p>
+                    <p class="post-published">{props.publishedAt}</p>
+                </div>
+            )
+        }
+
+        // App.js
+        function App() {
+            return (
+                <div id='wrapper'>
+                    <PostItem
+                        title="C#(.NET) - Tương tác với file Excel"
+                        image="https://files.fullstack.edu.vn/f8-prod/learning-paths/2/63b4642136f3e.png"
+                        description='Bạn có kiến thức ngôn ngữ C#'
+                        publishedAt='Một ngày trước 5 phút đọc'
+                    />
+
+                </div>
+            )
+        }
+
+        // index.js
+        ReactDOM.render(<App />, document.getElementById('root'))
+
+
+    </script>
+
+</body>
+
+</html>
